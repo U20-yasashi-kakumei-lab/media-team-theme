@@ -1,0 +1,600 @@
+$color_main: #a7d034; // Main color
+$color_main_dark: #6c8b16; // Main color ( Dark )
+$silver: #f3f3f3; // Silver
+$green: #0fa10f;
+$red: #a10404;
+$pink: #c7007b;
+$darkblue: #00379c;
+
+$menubar_size: 48px; // Menubar size
+$snsbtn: 43px;
+$maxWidth: 1200px; // Main content max width
+$anmTime: 0.3s; // Animation time
+
+* {
+    font-family: "M PLUS Rounded 1c";
+    box-sizing: border-box;
+}
+
+div {
+    overflow: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    background-color: $silver;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: $color_main;
+    padding-top: $menubar_size;
+
+    a {
+        display: block;
+        margin: 0 auto;
+
+        img.top {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        img.top-half {
+            @extend img.top;
+            width: 50%;
+        }
+    }
+
+
+}
+
+// CENTERING FOR ALL
+.centering {
+    width: 100%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+}
+
+// Menubar
+section.menubar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $menubar_size;
+    background-color: $color_main;
+    z-index: 50;
+
+    // Menubar button
+    a#menubtn {
+        color: white;
+        display: block;
+        width: $menubar_size;
+        height: $menubar_size;
+        line-height: $menubar_size;
+        text-align: center;
+        font-size: 30px;
+        transition: $anmTime;
+        float: left;
+    }
+
+    a#menubtn:hover {
+        color: rgb(241, 241, 241);
+    }
+
+    a.snsbtn {
+        color: white;
+        display: block;
+        width: $snsbtn;
+        height: $snsbtn;
+        line-height: $snsbtn;
+        border: solid 2px white;
+        border-radius: 50px;
+        font-size: 22px;
+        margin: 2.3px;
+        text-align: center;
+        transition: $anmTime;
+        float: right;
+    }
+
+    a.snsbtn.tw:hover {
+        color: rgb(30, 136, 229);
+        border: solid 2px rgb(30, 136, 229);
+    }
+
+    a.snsbtn.insta:hover {
+        color: rgb(230, 81, 0);
+        border: solid 2px rgb(230, 81, 0);
+    }
+}
+
+// Menu area
+section#menuboard {
+    position: fixed;
+    top: 48px;
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    z-index: 30;
+    overflow: hidden;
+    transition: $anmTime;
+    border-bottom:solid 1px gray;
+    box-sizing: border-box;
+
+    #menuarea {
+        @extend .centering;
+        height:100%;
+
+        ul {
+            display: block;
+            width: 100%;
+            height:100%;
+            text-align: center;
+            margin: 0;
+            padding:0;
+
+            li {
+                display: inline-block;
+                width: 150px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                font-size: 0.9em;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color: black;
+                    font-weight: bold;
+                    text-decoration: none;
+                    transition: $anmTime;
+                }
+
+                a:hover {
+                    background-color: rgb(226, 226, 226);
+                }
+
+            }
+        }
+    }
+}
+
+.menuOpen {
+    transition: $anmTime;
+    height:48px !important;
+}
+#menuIco {
+    transition: $anmTime;
+}
+.menuIcoRotate {
+    transition: $anmTime;
+    transform: rotate(90deg);
+
+}
+
+
+.wrapper {
+    @extend .centering;
+
+    .left {
+        width: 64%;
+        float: left;
+        padding-top: 30px;
+    }
+
+    .right {
+        width: 32%;
+        float: right;
+        padding-top: 30px;
+    }
+}
+
+// Category class
+.cat {
+    display: inline-block;
+    width: 90px;
+    height: auto;
+    color: black;
+    border: solid 2px black;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 2px 0;
+    transition: $anmTime;
+    text-decoration: none;
+}
+
+.cat.green {
+    color: $green;
+    border: solid 2px $green;
+}
+
+.cat.red {
+    color: $red;
+    border: solid 2px $red;
+}
+
+.cat.pink {
+    color: $pink;
+    border: solid 2px $pink;
+}
+
+.cat.darkblue {
+    color: $darkblue;
+    border: solid 2px $darkblue;
+}
+
+// Card design
+.card {
+    position: relative;
+    width: 32%;
+    height: 350px;
+    border: solid 1px gray;
+    margin-bottom: 36px;
+
+    a.cardLink {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: black;
+        text-decoration: none;
+
+        .image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                object-fit: cover;
+            }
+        }
+
+        .disc {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            background-color: white;
+            transition: $anmTime;
+
+            div.info {
+                display: block;
+                width: 100%;
+                height: 40px;
+
+                .date {
+                    width: 70px;
+                    line-height: 25px;
+                    font-size: 0.7em;
+                    color: gray;
+                    transition: $anmTime;
+                    float: right;
+                }
+            }
+
+            .title {
+                font-weight: bold;
+                font-size: 1.2em;
+                margin: 0;
+                transition: $anmTime;
+            }
+        }
+    }
+
+    a.cardLink:hover {
+        .disc {
+            background-color: $color_main_dark;
+
+            div.info {
+
+                .cat {
+                    color: white;
+                    border: solid 2px white;
+                }
+
+                .date {
+                    color: white;
+                }
+            }
+        }
+
+        .title {
+            color: white;
+        }
+    }
+}
+
+// New posts
+.postList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+// PickUp posts
+.pickUp {
+    @extend .postList;
+
+    .card {
+        width: calc(50% - 20px);
+        height: 400px;
+
+        a.cardLink {
+            .image {
+                height: 250px;
+            }
+        }
+    }
+
+}
+
+// Load more button
+
+.loadmore {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: white;
+    border: solid 1px black;
+}
+
+.loadmore:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.loadmore:active {
+    background-color: rgb(179, 179, 179);
+}
+
+// Article area
+.article {
+
+    h1.title {
+        display: block;
+        font-size: 1.8em;
+        margin: 0;
+        padding-top: 10px;
+        height: auto;
+    }
+
+    .ft-image {
+        position: relative;
+    }
+
+    .ft-image:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0;
+        padding-bottom: 46%;
+    }
+
+    .ft-image img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cat-area {
+        width: 100%;
+        margin: 15px 0;
+
+        .cat {
+            background-color: white;
+        }
+    }
+
+    .tag-area {
+        @extend .cat-area;
+
+        i {
+            font-size: 1.2em;
+            line-height: 26px;
+            color: $color_main_dark;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            line-height: 26px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    div.date {
+        width: 100%;
+        color: gray;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    .auther {
+        .at-l {
+            display: flex;
+            width: 150px;
+            height: 150px;
+            float: left;
+            justify-content: center;
+            align-items: center;
+
+            .ico {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .at-r {
+            display: flex;
+            width: calc(100% - 150px);
+            height: 150px;
+            float: right;
+            align-items: center;
+
+            .at-content {
+                padding: 20px;
+
+                h3 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.related {
+    @extend .postList;
+
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+.right {
+    .card {
+        width: 100%;
+        height: 350px;
+
+        a.cardLink {
+            .image {
+                height: 200px;
+            }
+        }
+    }
+
+    div.widget {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+// Article
+article {}
+
+
+// Advertisement
+.sideAd {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border: solid 1px gray;
+}
+
+// Footer
+footer {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    font-size: 0.8em;
+}
+
+// Smartphone lasndscape
+@media screen and (max-width: 700px) {
+
+    .postList {
+        justify-content: space-around;
+    }
+
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    .wrapper {
+        .left {
+            width: 90%;
+            float: inherit;
+            margin: 0 auto;
+        }
+
+        .right {
+            width: 90%;
+            float: inherit;
+            margin: 0 auto;
+        }
+    }
+
+    .related {
+        justify-content: space-between;
+    }
+
+    section#menuboard {
+        #menuarea {
+    
+            ul {
+    
+                li {
+                    width: 20%;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+
+}
+
+// Smartphone portrait
+@media screen and (max-width: 520px) {
+
+    .card {
+        width: 95%;
+    }
+
+    .pickUp {
+        .card {
+            width: 95%;
+            height: 350px;
+
+            a.cardLink {
+                .image {
+                    height: 200px;
+                }
+            }
+        }
+    }
+
+    .article {
+
+        h1.title {
+            font-size: 1.2em;
+        }
+    }
+
+    section#menuboard {
+        #menuarea {
+    
+            ul {
+    
+                li {
+                    width: 50%;
+                    font-size: 0.7em;
+                    float:left;
+                }
+            }
+        }
+    }
+
+    .menuOpen {
+        height:96px !important;
+    }
+}

@@ -190,6 +190,11 @@ section#menuboard {
         float: right;
         padding-top: 30px;
     }
+
+    .full {
+        width: 100%;
+        padding:30px 0;
+    }
 }
 
 // Category class
@@ -530,6 +535,11 @@ footer {
         .right {
             width: 90%;
             float: inherit;
+            margin: 0 auto;
+        }
+
+        .full {
+            width: 90%;
             margin: 0 auto;
         }
     }
